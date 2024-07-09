@@ -10,8 +10,13 @@ import { RecipeDetailsCardComponent } from './recipe-details-card/recipe-details
 })
 export class RandomComponent {
   showRecipeDetails: boolean = false;
+  count: number = 0;
 
-  toggleRecipeDetails() {
-    this.showRecipeDetails = !this.showRecipeDetails;
+  getRecipeDetails() {
+    this.count++;
+    if (this.count > 0) {
+      this.showRecipeDetails = true;
+      console.log(this.count);
+    }
   }
 }

@@ -11,11 +11,12 @@ import { ApiFoodService } from '../../services/api-food.service';
 
 export class RecipeDetailsCardComponent {
   private apiFoodService = inject(ApiFoodService);
-  randomRecipe: any;
+  randomRecipe: any = this.getRandomRecipe();
 
   getRandomRecipe() {
     this.apiFoodService.getRandomFood().subscribe((data: any) => {
       this.randomRecipe = data.meals[0].strMeal;
+      console.log(this.randomRecipe);
     })
   }
 }
