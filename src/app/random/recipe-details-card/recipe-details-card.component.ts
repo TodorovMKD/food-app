@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { ApiFoodService } from '../../services/api-food.service';
 
 @Component({
@@ -11,7 +11,9 @@ import { ApiFoodService } from '../../services/api-food.service';
 
 export class RecipeDetailsCardComponent {
   private apiFoodService = inject(ApiFoodService);
-  randomRecipe: any = this.getRandomRecipe();
+  @Input() randomRecipe: any = this.getRandomRecipe();
+  showCard: boolean = false;
+  clickCount: number = 0;
 
   getRandomRecipe() {
     this.apiFoodService.getRandomFood().subscribe((data: any) => {
