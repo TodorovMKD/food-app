@@ -1,8 +1,12 @@
 <div class="input-group flex-nowrap mb-3">
     <input type="text" class="form-control" placeholder="Search for Recipe" aria-label="Search"
-        aria-describedby="addon-wrapping">
-    <button type="submit" class="btn btn-danger" (click)="toggleCards()">Search</button>
+        aria-describedby="addon-wrapping" >
+    <button type="submit" class="btn btn-danger" (click)="getRecipeDetails()">Search</button>
 </div>
-@if (showRecipes) {
-<app-result-card></app-result-card>
+
+@for (item of recipeDetails.meals; track $index) {
+    <app-result-card
+    [imgCard]="item.strMealThumb"
+    [titleCard]="item.strMeal"
+    ></app-result-card>
 }

@@ -1,17 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, inject, NgModule } from '@angular/core';
 import { ResultCardComponent } from '../result-card/result-card.component';
+import { ApiFoodService } from '../../services/api-food.service';
 
 @Component({
   selector: 'app-search-ingredients',
   standalone: true,
-  imports: [ResultCardComponent],
+  imports: [ResultCardComponent,],
   templateUrl: './search-ingredients.component.html',
   styleUrl: './search-ingredients.component.css'
 })
 export class SearchIngredientsComponent {
-  showRecipes: boolean = false;
+  private apiService = inject(ApiFoodService)
+  recipeDetails: any;
+  search: string = "Fish";
 
-  toggleCards() {
-    this.showRecipes = !this.showRecipes;
+  getRecipeDetails() {
+    this.apiService.getFoodURL(this.search).subscribe((data) => {
+      this.recipeDetails = data;
+      console.log(this.recipeDetails);
+
+    })
   }
 }
