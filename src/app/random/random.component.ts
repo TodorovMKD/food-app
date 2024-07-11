@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RecipeDetailsCardComponent } from './recipe-details-card/recipe-details-card.component';
+import { ApiFoodService } from '../services/api-food.service';
 
 @Component({
   selector: 'app-random',
@@ -9,10 +10,14 @@ import { RecipeDetailsCardComponent } from './recipe-details-card/recipe-details
   styleUrl: './random.component.css'
 })
 export class RandomComponent {
-  showRecipeDetails: boolean = false;
   recipeDetails: any;
+  private apiService = inject(ApiFoodService)
 
   getRecipeDetails() {
-    this.showRecipeDetails = true
+    this.apiService.getRandomFood().subscribe((data) => {
+      this.recipeDetails = data;
+      console.log(this.recipeDetails);
+
+    })
   }
 }

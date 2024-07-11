@@ -1,8 +1,10 @@
 <button type="button" class="btn btn-danger" (click)="getRecipeDetails()">Get Random Recipe</button>
-<p>
-    <app-recipe-details-card [randomRecipe]="recipeDetails"></app-recipe-details-card>
 
-</p>
-@if (showRecipeDetails) {
-    <app-recipe-details-card [randomRecipe]="recipeDetails"></app-recipe-details-card>
+@if (recipeDetails != null) {
+    <app-recipe-details-card 
+    [imgCard]="recipeDetails.meals[0].strMealThumb"
+    [titleCard]="recipeDetails.meals[0].strMeal"
+    [descriptionCard]="recipeDetails.meals[0].strInstructions"
+    [linkCard]="recipeDetails.meals[0].strYoutube"
+    ></app-recipe-details-card>
 }
