@@ -1,12 +1,20 @@
 <div class="input-group flex-nowrap mb-3">
     <input type="text" class="form-control" placeholder="Search for Recipe" aria-label="Search"
-        aria-describedby="addon-wrapping" >
+        aria-describedby="addon-wrapping" [(ngModel)]="search">
     <button type="submit" class="btn btn-danger" (click)="getRecipeDetails()">Search</button>
 </div>
 
-@for (item of recipeDetails.meals; track $index) {
-    <app-result-card
-    [imgCard]="item.strMealThumb"
-    [titleCard]="item.strMeal"
-    ></app-result-card>
+@if (search === '') {
+<p>Enter a Recipe</p>
+} @else {
+        <div class="row">
+            @for (item of recipeDetails.meals; track $index) {
+                <div class="col-sm-2 p-2 m-2">
+                    <app-result-card [imgCard]="item.strMealThumb" [titleCard]="item.strMeal" [descriptionCard]="item.strInstructions"
+                    [linkCard]="item.strYoutube"></app-result-card>
+                </div>
+
+                }
+        </div>
+
 }

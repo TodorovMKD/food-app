@@ -1,9 +1,10 @@
-<div class="card mt-3" style="width: 18rem;">
-    <img [src]="imgCard" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">{{titleCard}}</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
+<div class="card mt-3" style="width: 15rem;">
+    <img [src]="imgCard" class="card-img-top" alt="..." (click)="toggleCardContent()">
+    <h5 class="card-title p-3">{{titleCard}}</h5>
+    @if (showContent) {
+        <div class="card-body">
+            <p class="card-text" style="max-height: 150px; overflow: auto">{{descriptionCard}}</p>
+            <a [href]="linkCard" class="btn btn-primary">Youtube</a>
+        </div>
+    }
 </div>
