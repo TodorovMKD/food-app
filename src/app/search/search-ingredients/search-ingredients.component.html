@@ -10,11 +10,10 @@
         <div class="row">
             @for (item of recipeDetails.meals; track $index) {
                 <div class="col-sm-2 p-2 m-2">
-                    <app-result-card [imgCard]="item.strMealThumb" [titleCard]="item.strMeal" [descriptionCard]="item.strInstructions"
+                    <app-result-card [idCard]="item.idMeal" [imgCard]="item.strMealThumb" [titleCard]="item.strMeal" [descriptionCard]="item.strInstructions"
                     [linkCard]="item.strYoutube"></app-result-card>
                 </div>
 
                 }
         </div>
-
 }

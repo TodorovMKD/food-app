@@ -1,5 +1,8 @@
 <div class="card mt-3" style="width: 15rem;">
-    <img [src]="imgCard" class="card-img-top" alt="..." (click)="toggleCardContent()">
+    <a href="/details/:idMeal">
+        <img [src]="imgCard" class="card-img-top" alt="..." (click)="toggleCardContent()">
+    </a>
+    <p>{{idCard}}</p>
     <h5 class="card-title p-3">{{titleCard}}</h5>
     @if (showContent) {
         <div class="card-body">
