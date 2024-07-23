@@ -6,7 +6,7 @@ import { ShowDetailsComponent } from './show-details/show-details.component';
 
 export const routes: Routes = [
     { path: 'result-card-component', component: ResultCardComponent },
-    { path: '**', component: HomeComponent },
     { path: 'test', component: TestComponent },
     { path: 'details/:idMeal', component: ShowDetailsComponent },
+    { path: '**', component: HomeComponent },
 ];

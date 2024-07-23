@@ -1,1 +1,11 @@
-<p>show-details works!</p>
+<div class="card position-absolute top-50 start-50 translate-middle" style="width: 18rem;">
+    <img [src]="idMeal.meals[0].strMealThumb" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{idMeal.meals[0].strMeal}}</h5>
+      <p>{{idMeal.meals[0].strInstructions}}</p>
+        <ul>
+            <li>{{idMeal.meals[0].strIngredient1}}</li>
+        </ul>
+      <a [href]="idMeal.meals[0].strYoutube" class="btn btn-primary">Youtube</a>
+    </div>
+  </div>

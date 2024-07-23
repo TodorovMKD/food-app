@@ -9,9 +9,9 @@ import { Router } from '@angular/router';
   templateUrl: './result-card.component.html',
   styleUrl: './result-card.component.css'
 })
+
 export class ResultCardComponent {
 
-  constructor(private router: Router) { }
 
   showContent: boolean = false;
   @Input() idCard: any;
@@ -21,14 +21,7 @@ export class ResultCardComponent {
   @Input() linkCard: any;
 
   toggleCardContent() {
-    debugger;
     this.showContent = !this.showContent;
-    this.goToDetails(this.idCard)
   }
-
-  goToDetails(id: string): void {
-    this.router.navigate(['/details', id]);
-  }
-
 
 }

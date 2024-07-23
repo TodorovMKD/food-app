@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 const RANDOM_FOOD_URL = 'https://www.themealdb.com/api/json/v1/1/random.php';
 const FOOD_URL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
+const FOOD_ID = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i='
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +21,9 @@ export class ApiFoodService {
 
   getFoodURL(search: string) {
     return this.http.get(FOOD_URL + search)
+  }
+
+  getFoodByID(idMeal: string) {
+    return this.http.get(FOOD_ID + idMeal)
   }
 }
