@@ -23,7 +23,7 @@ export class ApiFoodService {
     return this.http.get(FOOD_URL + search)
   }
 
-  getFoodByID(idMeal: string) {
+  getFoodByID(idMeal: number) {
     return this.http.get(FOOD_ID + idMeal)
   }
 }

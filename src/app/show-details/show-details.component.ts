@@ -11,18 +11,13 @@ import { ApiFoodService } from '../services/api-food.service';
 export class ShowDetailsComponent {
 
   private apiService = inject(ApiFoodService);
+  saveData?: any;
   @Input() idMeal: any;
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
     this.apiService.getFoodByID(this.idMeal).subscribe((data) => {
-      this.idMeal = data;
-      console.log(this.idMeal);
+      this.saveData = data;
+      console.log(this.saveData);
     })
-
-
-
-
   }
 }
