@@ -1,6 +1,4 @@
-export interface FoodData {
-    meals: Meal[]
-}
+
 
 export interface Meal {
     idMeal: string

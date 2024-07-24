@@ -1,12 +1,12 @@
 <div class="card position-absolute top-50 start-50 translate-middle" style="width: 18rem;">
-    <img [src]="idMeal.meals[0].strMealThumb" class="card-img-top" alt="...">
+    <img [src]="saveData?.strMealThumb" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{saveData.meals[0].strMeal}}</h5>
-      <p class="card-text" style="max-height: 150px; overflow: auto">{{idMeal.meals[0].strInstructions}}</p>
+      <h5 class="card-title">{{saveData?.strMeal}}</h5>
+      <p class="card-text" style="max-height: 150px; overflow: auto">{{saveData?.strInstructions}}</p>
       <p>Ingredients:</p>
         <ul>
-            <li>{{idMeal.meals[0].strIngredient1}}</li>
+            <li>{{saveData?.strIngredient1}}</li>
         </ul>
-      <a [href]="idMeal.meals[0].strYoutube" class="btn btn-primary">Youtube</a>
+      <a [href]="saveData?.strYoutube" class="btn btn-primary">Youtube</a>
     </div>
   </div>
